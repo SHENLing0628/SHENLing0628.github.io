@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shenling0628.github.io</id>
     <title>SHEN Ling&apos;s Tech Blog</title>
-    <updated>2019-06-17T08:24:15.329Z</updated>
+    <updated>2019-06-17T08:27:10.122Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shenling0628.github.io"/>
     <link rel="self" href="https://shenling0628.github.io/atom.xml"/>
@@ -25,12 +25,11 @@
         <link href="https://shenling0628.github.io/post/Create-Threejs-on-React">
         </link>
         <updated>2019-06-17T07:06:44.000Z</updated>
-        <summary type="html"><![CDATA[<p>根据官方文档，学习如何在React上，从头开始创建一个会活动的Three.js场景动画
-<img src="https://shenling0628.github.io/post-images/1560756617497.png" alt=""></p>
+        <summary type="html"><![CDATA[<p>根据官方文档，学习如何在React上，从头开始创建一个会活动的Three.js场景动画</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>根据官方文档，学习如何在React上，从头开始创建一个会活动的Three.js场景动画
-<img src="https://shenling0628.github.io/post-images/1560756617497.png" alt=""></p>
+        <content type="html"><![CDATA[<p>根据官方文档，学习如何在React上，从头开始创建一个会活动的Three.js场景动画</p>
 <!-- more -->
+<p><img src="https://shenling0628.github.io/post-images/1560756617497.png" alt=""></p>
 <p>参考源码链接：https://github.com/SHENLing0628/ThreeJS-Cube</p>
 <ol>
 <li>
