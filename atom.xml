@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shenling0628.github.io</id>
     <title>SHEN Ling&apos;s Tech Blog</title>
-    <updated>2019-06-17T08:27:37.747Z</updated>
+    <updated>2019-06-18T01:26:42.168Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shenling0628.github.io"/>
     <link rel="self" href="https://shenling0628.github.io/atom.xml"/>
@@ -62,21 +62,20 @@
 <img src="https://shenling0628.github.io/post-images/1560758197768.png" alt=""></p>
 </li>
 <li>
-<p>进入cube.js，创建Three.js内容
-（1）创建componentDidMount()用以调用执行初始化函数
+<p>进入cube.js，创建Three.js内容</p>
+<p>（1）创建componentDidMount()用以调用执行初始化函数
 <img src="https://shenling0628.github.io/post-images/1560758320323.png" alt=""></p>
-<pre><code> （2）在initThree()中创建内容
- 					A. 初始化并new照相机（camera）、场景（scene）
- 					![](https://shenling0628.github.io/post-images/1560758486614.png)
- 					B. 创建要旋转的立方体
- 					![](https://shenling0628.github.io/post-images/1560758517700.png)
- 					C. 创建渲染器
- 					![](https://shenling0628.github.io/post-images/1560758541316.png)
- 					D. 创建动画效果
- 					![](https://shenling0628.github.io/post-images/1560758756340.png)
- 					
- 					initThree中完整代码：
- 					![](https://shenling0628.github.io/post-images/1560758837064.png)
+<p>（2）在initThree()中创建内容
+A. 初始化并new照相机（camera）、场景（scene）
+<img src="https://shenling0628.github.io/post-images/1560758486614.png" alt="">
+B. 创建要旋转的立方体
+<img src="https://shenling0628.github.io/post-images/1560758517700.png" alt="">
+C. 创建渲染器
+<img src="https://shenling0628.github.io/post-images/1560758541316.png" alt="">
+D. 创建动画效果
+<img src="https://shenling0628.github.io/post-images/1560758756340.png" alt=""></p>
+<pre><code> 				initThree中完整代码：
+ 				![](https://shenling0628.github.io/post-images/1560758837064.png)
 </code></pre>
 </li>
 <li>
