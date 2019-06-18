@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shenling0628.github.io</id>
     <title>SHEN Ling&apos;s Tech Blog</title>
-    <updated>2019-06-18T01:26:42.168Z</updated>
+    <updated>2019-06-18T01:51:37.833Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shenling0628.github.io"/>
     <link rel="self" href="https://shenling0628.github.io/atom.xml"/>
@@ -74,13 +74,14 @@ C. 创建渲染器
 <img src="https://shenling0628.github.io/post-images/1560758541316.png" alt="">
 D. 创建动画效果
 <img src="https://shenling0628.github.io/post-images/1560758756340.png" alt=""></p>
-<pre><code> 				initThree中完整代码：
- 				![](https://shenling0628.github.io/post-images/1560758837064.png)
-</code></pre>
 </li>
+</ol>
+<p>initThree中完整代码：
+<img src="https://shenling0628.github.io/post-images/1560758837064.png" alt=""></p>
+<ol start="8">
 <li>
-<p>运行React.app: 在http://localhost:3000 中查看
-<code>npm start</code></p>
+<p>运行React.app: 在http://localhost:3000 中查看</p>
+<p><code>npm start</code></p>
 </li>
 </ol>
 ]]></content>
