@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shenling0628.github.io</id>
     <title>SHEN Ling&apos;s Tech Blog</title>
-    <updated>2019-06-18T02:05:00.839Z</updated>
+    <updated>2019-06-18T02:20:32.557Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shenling0628.github.io"/>
     <link rel="self" href="https://shenling0628.github.io/atom.xml"/>
@@ -25,7 +25,135 @@
         <link href="https://shenling0628.github.io/post/Create-Threejs-on-React">
         </link>
         <updated>2019-06-17T07:06:44.000Z</updated>
-        <content type="html"><![CDATA[<p>TEST</p>
+        <summary type="html"><![CDATA[<p>根据官方文档，学习如何在React上，从头开始创建一个会活动的Three.js场景动画</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>根据官方文档，学习如何在React上，从头开始创建一个会活动的Three.js场景动画</p>
+<!-- more -->
+<p><img src="https://shenling0628.github.io/post-images/1560756617497.png" alt=""></p>
+<p>参考源码链接：https://github.com/SHENLing0628/ThreeJS-Cube</p>
+<ol>
+<li>
+<p>安装node.js和create-react-app脚手架 - 具体参考官方文档
+（1） Three.js Guideline: https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
+（2） Create-react-app Guideline: https://facebook.github.io/create-react-app/docs/getting-started</p>
+</li>
+<li>
+<p>打开一个文件夹，利用create-react-app创建新项目
+<code>create-react-app &lt;--project name--&gt;</code>
+<img src="https://shenling0628.github.io/post-images/1560757135297.png" alt=""></p>
+</li>
+<li>
+<p>进入创建的文件夹
+<code>cd &lt;--project name--&gt;</code>
+<img src="https://shenling0628.github.io/post-images/1560757240487.png" alt=""></p>
+</li>
+<li>
+<p>安装THREE包
+<code>npm install three</code></p>
+</li>
+<li>
+<p>在src目录新建cube.js，用以创建cube组件
+<code>echo cube.js</code>
+<img src="https://shenling0628.github.io/post-images/1560757625453.png" alt="">
+<img src="https://shenling0628.github.io/post-images/1560824267216.png" alt=""></p>
+</li>
+<li>
+<p>将src目录下的app.js修改，使其引入cube组件
+<img src="https://shenling0628.github.io/post-images/1560824327329.png" alt=""></p>
+</li>
+<li>
+<p>进入cube.js，创建Three.js内容</p>
+<p>（1）创建componentDidMount()用以调用执行初始化函数
+<img src="https://shenling0628.github.io/post-images/1560824384999.png" alt=""></p>
+<p>（2）在initThree()中创建内容
+A. 初始化并new照相机（camera）、场景（scene）</p>
+</li>
+</ol>
+<pre><code>      //create scene
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x515151);
+      group = new THREE.Group();
+      scene.add(group);
+
+      //create camera
+      camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 1, 2000 );
+			camera.position.x = -10;
+      camera.position.y = 15;
+			camera.position.z = 500;
+</code></pre>
+<p>B. 创建要旋转的立方体</p>
+<pre><code>      //create the cube
+      let geometry = new THREE.BoxGeometry(100, 100, 100); //create BoxGeometry object
+      let material = new THREE.MeshBasicMaterial({ color: 0xffffff}); //set the material of the cube
+      let cube = new THREE.Mesh( geometry, material); //Mesh contains the cube and the material, we can push the mesh object into our scenerio, and make it moves freely in the scene
+      group.add(cube);
+</code></pre>
+<p>C. 创建渲染器</p>
+<pre><code>      //create renderer
+      renderer = new THREE.WebGLRenderer();
+      renderer.setClearColor( 0xffffff );
+			renderer.setPixelRatio( window.devicePixelRatio );
+      renderer.setSize( window.innerWidth, window.innerHeight);//渲染器大小尺寸
+      container.appendChild( renderer.domElement );
+</code></pre>
+<p>D. 创建动画效果</p>
+<pre><code>    function animate () {
+      requestAnimationFrame(animate);
+      group.rotation.x += 0.01;
+      group.rotation.y += 0.01;
+
+      renderer.render( scene, camera);
+    }
+</code></pre>
+<p>initThree中完整代码：</p>
+<pre><code>initThree = () =&gt; {
+    let camera, scene, renderer, group;
+    let container = document.getElementById('cube');
+    init();
+    animate();
+    
+    function init() {
+      //create scene
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x515151);
+      group = new THREE.Group();
+      scene.add(group);
+
+      //create camera
+      camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 1, 2000 );
+			camera.position.x = -10;
+      camera.position.y = 15;
+			camera.position.z = 500;
+
+      //create the cube
+      let geometry = new THREE.BoxGeometry(100, 100, 100); //create BoxGeometry object
+      let material = new THREE.MeshBasicMaterial({ color: 0xffffff}); //set the material of the cube
+      let cube = new THREE.Mesh( geometry, material); //Mesh contains the cube and the material, we can push the mesh object into our scenerio, and make it moves freely in the scene
+      group.add(cube);
+
+      let geo2 = new THREE.SphereGeometry()
+
+      //create renderer
+      renderer = new THREE.WebGLRenderer();
+      renderer.setClearColor( 0xffffff );
+			renderer.setPixelRatio( window.devicePixelRatio );
+      renderer.setSize( window.innerWidth, window.innerHeight);//渲染器大小尺寸
+      container.appendChild( renderer.domElement );
+
+    }
+
+    function animate () {
+      requestAnimationFrame(animate);
+      group.rotation.x += 0.01;
+      group.rotation.y += 0.01;
+
+      renderer.render( scene, camera);
+    }
+  }
+</code></pre>
+<ol start="8">
+<li>运行React.app: 在http://localhost:3000 中查看  <code>npm start</code></li>
+</ol>
 ]]></content>
     </entry>
 </feed>
