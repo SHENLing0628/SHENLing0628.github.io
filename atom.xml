@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shenling0628.github.io</id>
     <title>SHEN Ling&apos;s Tech Blog</title>
-    <updated>2019-07-18T10:12:39.549Z</updated>
+    <updated>2019-09-20T03:44:44.807Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shenling0628.github.io"/>
     <link rel="self" href="https://shenling0628.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://shenling0628.github.io/images/avatar.png</logo>
     <icon>https://shenling0628.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, SHEN Ling&apos;s Tech Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[REACT踩坑笔记]]></title>
+        <id>https://shenling0628.github.io/post/react-cai-keng-bi-ji</id>
+        <link href="https://shenling0628.github.io/post/react-cai-keng-bi-ji">
+        </link>
+        <updated>2019-09-20T03:39:02.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>如果需要在render中写一个传参循环，比如创建一个树形结构，则需要在return外面，写一个const loop用于执行这种递归，但是， 如果循环内使用的是map，则写成如下格式是没有返回值的：
+<code>const loop = data =&gt; { 	data.map(item =&gt; { 		return ( 			&lt;TreeNode 				key={item.uuid} 				label={item.label} 				extra={{ parentUuid: item.parentUuid }} 			/&gt; 		); 	}); 	}</code></li>
+</ol>
+<p>必须把最外面的括号去掉才有返回值：
+<code>const loop = data =&gt; 		data.map(item =&gt; { 			return ( 				&lt;TreeNode 					key={item.uuid} 					label={item.label} 					extra={{ parentUuid: item.parentUuid }} 				/&gt; 			); 		});</code></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Three.js开发指南 - 学习实践 - 第一章（第一个三维场景）]]></title>
         <id>https://shenling0628.github.io/post/threejs-chapter1</id>

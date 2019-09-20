@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ThreeJS-Leaning | SHEN Ling&#39;s Tech Blog</title>
+<title>REACT踩坑笔记 | SHEN Ling&#39;s Tech Blog</title>
 <meta name="description" content="ALL FOR TECH PROMOTION">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://shenling0628.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -95,34 +101,40 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: ThreeJS-Leaning</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://shenling0628.github.io/post/Create-Threejs-on-React">
-                  <h2 class="post-title">在React上从零开始搭建Three.js</h2>
-                </a>
-                <div class="post-date">
-                  2019-06-17
-                </div>
-                <div class="post-abstract">
-                  <p>根据官方文档，学习如何在React上，从头开始创建一个会活动的Three.js场景动画</p>
+          <div class="post-detail">
+            <h2 class="post-title">REACT踩坑笔记</h2>
+            <div class="post-date">2019-09-20</div>
+            
+            <div class="post-content">
+              <ol>
+<li>如果需要在render中写一个传参循环，比如创建一个树形结构，则需要在return外面，写一个const loop用于执行这种递归，但是， 如果循环内使用的是map，则写成如下格式是没有返回值的：
+<code>const loop = data =&gt; { 	data.map(item =&gt; { 		return ( 			&lt;TreeNode 				key={item.uuid} 				label={item.label} 				extra={{ parentUuid: item.parentUuid }} 			/&gt; 		); 	}); 	}</code></li>
+</ol>
+<p>必须把最外面的括号去掉才有返回值：
+<code>const loop = data =&gt; 		data.map(item =&gt; { 			return ( 				&lt;TreeNode 					key={item.uuid} 					label={item.label} 					extra={{ parentUuid: item.parentUuid }} 				/&gt; 			); 		});</code></p>
 
-                </div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://shenling0628.github.io/post/threejs-chapter1">
+                  <h3 class="post-title">
+                    Three.js开发指南 - 学习实践 - 第一章（第一个三维场景）
+                  </h3>
+                </a>
               </div>
-              
-                <a class="right" href="https://shenling0628.github.io/post/Create-Threejs-on-React">
-                  <div class="feature-container" style="background-image: url('https://shenling0628.github.io/post-images/Create-Threejs-on-React.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
+            
 
-          <div class="pagination-container">
-  
-  
-</div>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -144,6 +156,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
