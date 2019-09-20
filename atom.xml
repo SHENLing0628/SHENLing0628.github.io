@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shenling0628.github.io</id>
     <title>SHEN Ling&apos;s Tech Blog</title>
-    <updated>2019-09-20T03:48:31.935Z</updated>
+    <updated>2019-09-20T03:49:34.772Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shenling0628.github.io"/>
     <link rel="self" href="https://shenling0628.github.io/atom.xml"/>
@@ -11,25 +11,15 @@
     <icon>https://shenling0628.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, SHEN Ling&apos;s Tech Blog</rights>
     <entry>
-        <title type="html"><![CDATA[ddddd]]></title>
+        <title type="html"><![CDATA[REACT踩坑笔记]]></title>
         <id>https://shenling0628.github.io/post/ddddd</id>
         <link href="https://shenling0628.github.io/post/ddddd">
         </link>
         <updated>2019-09-20T03:48:19.000Z</updated>
-        <content type="html"><![CDATA[<p>ddddddddddddddddddddddddddddddddd</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[REACT踩坑笔记]]></title>
-        <id>https://shenling0628.github.io/post/react-cai-keng-bi-ji</id>
-        <link href="https://shenling0628.github.io/post/react-cai-keng-bi-ji">
-        </link>
-        <updated>2019-09-20T03:39:02.000Z</updated>
         <summary type="html"><![CDATA[<p>踩坑中。。。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>踩坑中。。。</p>
 <!-- more -->
-<h1 id="jfahflawehiug"><strong>jfahflawehiug</strong></h1>
 <ol>
 <li>如果需要在render中写一个传参循环，比如创建一个树形结构，则需要在return外面，写一个const loop用于执行这种递归，但是， 如果循环内使用的是map，则写成如下格式是没有返回值的：<br>
 <code>const loop = data =&gt; { 	data.map(item =&gt; { 		return ( 			&lt;TreeNode 				key={item.uuid} 				label={item.label} 				extra={{ parentUuid: item.parentUuid }} 			/&gt; 		); 	}); 	}</code></li>
