@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://shenling0628.github.io/favicon.ico?v=1568951437509">
+<link rel="shortcut icon" href="https://shenling0628.github.io/favicon.ico?v=1568951519721">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://shenling0628.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://shenling0628.github.io">
-        <img src="https://shenling0628.github.io/images/avatar.png?v=1568951437509" class="site-logo">
+        <img src="https://shenling0628.github.io/images/avatar.png?v=1568951519721" class="site-logo">
         <h1 class="site-title">SHEN Ling&#39;s Tech Blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -107,6 +107,18 @@
             
             <div class="post-content">
               <p>如果需要在render中写一个传参循环，比如创建一个树形结构，则需要在return外面，写一个const loop用于执行这种递归，但是， 如果循环内使用的是map，则写成如下格式是没有返回值的：</p>
+<pre><code>const loop = data =&gt; {
+  		data.map(item =&gt; {
+  			return (
+  				&lt;TreeNode
+  					key={item.uuid}
+  					label={item.label}
+  					extra={{ parentUuid: item.parentUuid }}
+  				/&gt;
+  			);
+  		});
+		}
+</code></pre>
 
             </div>
             
