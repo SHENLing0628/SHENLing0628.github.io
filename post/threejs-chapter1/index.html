@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://shenling0628.github.io/favicon.ico?v=1568951058085">
+<link rel="shortcut icon" href="https://shenling0628.github.io/favicon.ico?v=1568951305371">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://shenling0628.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://shenling0628.github.io">
-        <img src="https://shenling0628.github.io/images/avatar.png?v=1568951058085" class="site-logo">
+        <img src="https://shenling0628.github.io/images/avatar.png?v=1568951305371" class="site-logo">
         <h1 class="site-title">SHEN Ling&#39;s Tech Blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -109,24 +109,24 @@
               </div>
             
             <div class="post-content">
-              <p>为学习（踩坑）Three.js，跟随《Three.js开发指南》这本书开始学习Three.js，并完成源代码创建。本篇为第一章节学习实践 -- 创建第一个三维场景。
+              <p>为学习（踩坑）Three.js，跟随《Three.js开发指南》这本书开始学习Three.js，并完成源代码创建。本篇为第一章节学习实践 -- 创建第一个三维场景。<br>
 项目源代码： <a href=""></a>https://github.com/SHENLing0628/THREEJS_Learning</p>
 <!-- more -->
 <ol>
 <li>
-<p>准备：
+<p>准备：<br>
 使用create-react-app搭建项目脚手架并创建相关component，具体操作请参考另一篇文章：<a href=""></a>https://shenling0628.github.io/post/Create-Threejs-on-React/</p>
 <p>实际由于本项目均采用javascript完成，故使用其他前端框架均可，依照喜好即可。</p>
-<p>在/src/exercise/exercise-1/index.js中进行代码查看与修改
+<p>在/src/exercise/exercise-1/index.js中进行代码查看与修改<br>
 https://github.com/SHENLing0628/THREEJS_Learning/tree/master/src/exercises/exercise-1</p>
 </li>
 <li>
-<p>本章要点：
-（1）创建Three.js场景
-（2）创建并查看三维对象 - 平面、立方体、球体
-（3）添加对象材质、光源、阴影效果
-（4）添加动画
-（5）优化场景，使场景对浏览器实现自适应
+<p>本章要点：<br>
+（1）创建Three.js场景<br>
+（2）创建并查看三维对象 - 平面、立方体、球体<br>
+（3）添加对象材质、光源、阴影效果<br>
+（4）添加动画<br>
+（5）优化场景，使场景对浏览器实现自适应<br>
 以下分步骤介绍具体细节与操作</p>
 </li>
 </ol>
@@ -191,7 +191,7 @@ scene.add(sphere);
 </code></pre>
 <p>注意：创建物体后，需要在场景scene中add这个物体，否则渲染器无法渲染出物体</p>
 <p>(4) 添加对象材质、光源、阴影效果</p>
-<p>a. 添加材质
+<p>a. 添加材质<br>
 根据上面的代码，可以看到，我们的每一个物体都需要添加材质，才能显示出这个物体本身，所以每一个物体实际上都是Mesh对象，包含了geometry和material两个部分。</p>
 <pre><code>...
 let planeMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff });
@@ -205,15 +205,15 @@ let cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 });
 let sphereMaterial = new THREE.MeshLambertMaterial({ color: 0x7777ff });
 ...
 </code></pre>
-<p>b. 添加光源
+<p>b. 添加光源<br>
 光源可以设置光源类型、光源颜色和光源位置，形成不同的效果。添加光源后，非Basic的材质的物体便可以看出每种材质在光源下的不同效果。</p>
 <pre><code>let spotLight = new THREE.SpotLight(0xffffff);
 spotLight.position.set(-40, 60, -10);
 scene.add(spotLight);
 </code></pre>
-<p>c. 添加阴影效果
-添加阴影效果需要实现以下几个内容：
-光源本身需要能够制造阴影、平面需要能够接收阴影、物体本身需要能够制造阴影效果。
+<p>c. 添加阴影效果<br>
+添加阴影效果需要实现以下几个内容：<br>
+光源本身需要能够制造阴影、平面需要能够接收阴影、物体本身需要能够制造阴影效果。<br>
 因为阴影的渲染是对浏览器有额外消耗的，所以默认都是关闭了阴影的效果，所以我们在这里需要打开这些阴影效果：</p>
 <p>光源：</p>
 <pre><code>//add light
@@ -233,8 +233,8 @@ cube.castShadow = true; //create shadow
 sphere.castShadow = true; //create shadow
 ...
 </code></pre>
-<p>(5) 添加动画
-根据第一章内容，我们需要让立方体选装，并让小球跳动
+<p>(5) 添加动画<br>
+根据第一章内容，我们需要让立方体选装，并让小球跳动<br>
 所以首先，需要把渲染场景部分封装为一个function，并用requestAnimationFrame添加动画：</p>
 <pre><code>document.getElementById('scene').appendChild(renderer.domElement);
 renderScene();
@@ -279,7 +279,7 @@ function renderScene () {
   		renderer.render(scene, camera);
   	}
 </code></pre>
-<p>(6) 优化场景，使场景对浏览器实现自适应
+<p>(6) 优化场景，使场景对浏览器实现自适应<br>
 为了使场景针对于浏览器大小进行自适应，特别是解决开了F12的控制台后关闭时，动画无法回到初始位置的问题，需要添加以下代码：</p>
 <pre><code>//make the scene is auto-adapted to the window
 window.addEventListener('resize', ()=&gt;{
