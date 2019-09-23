@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://shenling0628.github.io/favicon.ico?v=1568952081688">
+<link rel="shortcut icon" href="https://shenling0628.github.io/favicon.ico?v=1569223317013">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://shenling0628.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://shenling0628.github.io">
-        <img src="https://shenling0628.github.io/images/avatar.png?v=1568952081688" class="site-logo">
+        <img src="https://shenling0628.github.io/images/avatar.png?v=1569223317013" class="site-logo">
         <h1 class="site-title">SHEN Ling&#39;s Tech Blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -112,6 +112,13 @@
 </ol>
 <p>需要把loop最外面的两个大括号删掉才行：<br>
 <img src="https://shenling0628.github.io/post-images/1568952013337.png" alt=""></p>
+<ol start="2">
+<li>Javascript保留两位小数的两种方法 （假设num为小数变量）<br>
+(a) 四舍五入： <code>num = num.toFixed(2);</code><br>
+(b)不四舍五入：<br>
+<code>Math.floor(num * 100) / 100; //先小数变整数</code><br>
+<code>Number(num.toSting().match(/^\d+(?:\.\d{0,2})?/)); // 转化为字符串采用正则匹配</code></li>
+</ol>
 
             </div>
             

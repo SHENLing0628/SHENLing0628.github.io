@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shenling0628.github.io</id>
     <title>SHEN Ling&apos;s Tech Blog</title>
-    <updated>2019-09-20T04:01:54.441Z</updated>
+    <updated>2019-09-23T07:22:04.768Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shenling0628.github.io"/>
     <link rel="self" href="https://shenling0628.github.io/atom.xml"/>
@@ -22,6 +22,13 @@
 </ol>
 <p>需要把loop最外面的两个大括号删掉才行：<br>
 <img src="https://shenling0628.github.io/post-images/1568952013337.png" alt=""></p>
+<ol start="2">
+<li>Javascript保留两位小数的两种方法 （假设num为小数变量）<br>
+(a) 四舍五入： <code>num = num.toFixed(2);</code><br>
+(b)不四舍五入：<br>
+<code>Math.floor(num * 100) / 100; //先小数变整数</code><br>
+<code>Number(num.toSting().match(/^\d+(?:\.\d{0,2})?/)); // 转化为字符串采用正则匹配</code></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
